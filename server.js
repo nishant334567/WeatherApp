@@ -12,6 +12,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "hbs");
 
+const PORT = process.env.PORT || 5000;
+
 app.get("/", (req, res) => {
   res.sendFile("index.html");
 });
@@ -62,6 +64,4 @@ app.post("/", (req, res) => {
   });
 });
 
-app.listen(5000, () => {
-  console.log("Listening at port 5000...");
-});
+app.listen(PORT);
